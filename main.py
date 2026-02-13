@@ -1,6 +1,6 @@
 from google.cloud import bigquery
 
-def main():
+def main(request):
 
     client = bigquery.Client()
 
@@ -12,8 +12,8 @@ def main():
     query_job = client.query(QUERY)  # API request
     rows = query_job.result()  # Waits for query to finish
 
-    for row in rows:
-      print(row.name)
+    # for row in rows:
+    #   print(row.name)
 
     return ("OK", 200)
 
